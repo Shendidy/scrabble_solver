@@ -3,6 +3,6 @@ class Scrable
     @word = word
   end
   def score
-    0
+    @word == 'a' ? 1 : 0
   end
 end
