@@ -25,4 +25,19 @@ describe Scrable do
     game = Scrable.new("f")
     expect(game.score).to eq(4)
   end
+
+  it '6- should return 6' do
+    game = Scrable.new("street")
+    expect(game.score).to eq(6)
+  end
+
+  it '7- should return 22' do
+    game = Scrable.new("quirky")
+    expect(game.score).to eq(22)
+  end
+
+  it '8- should return 41' do
+    game = Scrable.new("OXYPHENBUTAZONE")
+    expect(game.score).to eq(41)
+  end
 end

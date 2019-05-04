@@ -14,8 +14,12 @@ class Scrable
   end
   def score
     return 0 if ["", " ", " \t\n", nil].include? @word
-    @score_board.find{
-                       |k,v| return k if v.include? @word.upcase
-                     }.first
+    score = 0
+    @word.split("").map{ |letter|
+                @score_board.find{ |k,v|
+                  score += k if v.include? letter.upcase
+                }.first
+              }
+    return score
   end
 end
